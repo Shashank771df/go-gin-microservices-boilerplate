@@ -1,0 +1,597 @@
+{
+	"info": {
+		"_postman_id": "fb4d5f95-f6f2-479e-a4ea-d105a2551d0c",
+		"name": "base",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NewItem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Forwarded-For",
+						"value": "172.145.144.25",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"German\",\r\n    \"lastName\": \"Zapata\",\r\n    \"docIdType\": 1,\r\n    \"docId\": \"23451221\",\r\n    \"birthMonth\":7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "%9*e%c8",
+						"type": "text"
+					},
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "filters",
+						"value": "[{\"key\":\"countryId\",\"order\": \"asc\", \"val\": \"PER\"}]",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "userToken",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "enablePaging",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "pagingSize",
+						"value": "4",
+						"type": "text"
+					},
+					{
+						"key": "pagingIndex",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ItemsGroupByMonth",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "%9*e%c8",
+						"type": "text"
+					},
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "filters",
+						"value": "[{\"key\":\"countryId\",\"order\": \"asc\", \"val\": \"PER\"}]",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "userToken",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "enablePaging",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "pagingSize",
+						"value": "4",
+						"type": "text"
+					},
+					{
+						"key": "pagingIndex",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/group-by-month",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"group-by-month"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchItemInterSVC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "%9*e%c8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/search-item/interservices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"search-item",
+						"interservices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateItem",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"businessName\" : \"SAN JUAN MACIAS 7 S.A.C.\",\r\n    \"businessId\" : \"70423234232\",\r\n    \"countryId\" : \"PER\",\r\n    \"regionLevel1Id\": \"LIMA\",\r\n    \"regionLevel2Id\": \"LIMA\",\r\n    \"regionLevel3Id\": \"SURQUILLO\",\r\n    \"name\": \"Clinica San Juan Macias\",\r\n    \"address\": \"Calle Los Faisanes 239\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveItem",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Activate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/2/activate",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"2",
+						"activate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/users/2/deactivate",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"users",
+						"2",
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ItemsEnv",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "%9*e%c8",
+						"type": "text"
+					},
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "filters",
+						"value": "[{\"key\":\"countryId\",\"order\": \"asc\", \"val\": \"PER\"}]",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "userToken",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "enablePaging",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "pagingSize",
+						"value": "4",
+						"type": "text"
+					},
+					{
+						"key": "pagingIndex",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/environments/search-items/interservices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"environments",
+						"search-items",
+						"interservices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ItemEnv",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "%9*e%c8",
+						"type": "text"
+					},
+					{
+						"key": "userId",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "filters",
+						"value": "[{\"key\":\"countryId\",\"order\": \"asc\", \"val\": \"PER\"}]",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "userToken",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "enablePaging",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "pagingSize",
+						"value": "4",
+						"type": "text"
+					},
+					{
+						"key": "pagingIndex",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"keyId\": \"alert\",\n    \"paramId\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/enviroments/search-item/interservices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"enviroments",
+						"search-item",
+						"interservices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateItemAlertEnv",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keyId\": \"alert\",\r\n    \"data\": {\r\n        \"enable\": true,\r\n        \"url\": \"https://api.telegram.org/bot1817876687:AAGDs6AdNnauwgxnVD-cRdfgSSaBFHyFSVU/sendMessage\",\r\n        \"chatId\": \"-475280151\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/enviroments/update-item/interservices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"enviroments",
+						"update-item",
+						"interservices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateItemLogEnv",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keyId\": \"log\",\r\n    \"data\": {\r\n        \"logLevel\": \"DEBUG\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/environments/update-item/interservices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"environments",
+						"update-item",
+						"interservices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateItemDatabaseEnv",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"keyId\": \"database\",\r\n    \"data\": {\r\n        \"enableScriptLog\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:7777/v1/environments/update-item/interservices",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "7777",
+					"path": [
+						"v1",
+						"environments",
+						"update-item",
+						"interservices"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"verbose": false,
+	"ignore": [".git", "dist/*"],
+	"watch": ["*.*", ".env"],
+	"ext": "go,json",
+	"exec": "go run *.go",
+	"signal": "SIGTERM"
+}
